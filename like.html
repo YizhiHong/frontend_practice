@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Facebook like</title>
+  <script>
+      const like = () => {
+        let count = document.getElementById('count')
+        count.innerHTML = Number(count.innerHTML) + 1
+        count.style.color='red'
+      }
+      const unlike = () => {
+        let count = document.getElementById('count')
+        if(count.innerHTML == 0) return;
+        count.innerHTML = Number(count.innerHTML) - 1
+        count.style.color='blue'
+      }
+      alert(window.innerWidth)
+      // addEvenlisterWay
+      // window.onload = function(){
+      //   document.getElementById("like").addEventListener('click', like)
+      //   document.getElementById("unlike").addEventListener('click', unlike)
+      // }
+  </script>
+</head>
+
+<body>
+  <div>
+    <!-- <button id="like">Like</button>
+    <button id="unlike">Unlike</button> -->
+    <button id="like" onclick="like()">Like</button>
+    <button id="unlike" onclick="unlike()">Unlike</button>
+
+    <div class="like-count">
+      <h3>like</h3>
+      <p><strong id="count">0</strong></p>
+    </div>
+  </div>
+
+</body>
+
+</html>

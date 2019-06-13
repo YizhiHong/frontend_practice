@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Checkbox</title>
+
+</head>
+
+<body>
+  <div class="checkbox-group">
+    <input type="checkbox" value="">
+    <input type="checkbox" value="">
+    <input type="checkbox" value="">
+    <input type="checkbox" value="">
+  </div>
+  <script>
+    let count = 0
+    for (let checkbox of document.querySelectorAll('[type=checkbox]')) {
+      checkbox.addEventListener('change', function () {
+        console.log(count)
+        if (this.checked) {
+          if (count >= 2) {
+            alert('xxx')
+            this.checked=false
+            return
+          }
+          count++
+        } else {
+          count--
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>
